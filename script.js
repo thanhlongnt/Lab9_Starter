@@ -29,13 +29,6 @@ const endTimerBtn = document.getElementById("endTimer");
 const traceBtn = document.getElementById("trace");
 const globalErrorBtn = document.getElementById("globalError");
 
-const obj = {
-    name: "Bob",
-    age: 33,
-    occupation: "Staff SWE",
-    skills: ["JavaScript", "Python", "C++"],
-};
-
 const table = [
     { id: 1, product: "Apple", price: 1.2 },
     { id: 2, product: "Tomato", price: 0.5 },
@@ -77,7 +70,7 @@ clearBtn.addEventListener("click", (e) => {
 // console.dir
 dirBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.dir(obj);
+    console.dir(dirBtn);
 });
 
 // console.dirxml
