@@ -29,14 +29,14 @@ const endTimerBtn = document.getElementById("endTimer");
 const traceBtn = document.getElementById("trace");
 const globalErrorBtn = document.getElementById("globalError");
 
-const exampleObj = {
+const obj = {
     name: "Bob",
     age: 33,
     occupation: "Staff SWE",
     skills: ["JavaScript", "Python", "C++"],
 };
 
-const exampleArray = [
+const table = [
     { id: 1, product: "Apple", price: 1.2 },
     { id: 2, product: "Tomato", price: 0.5 },
     { id: 3, product: "Pinapple", price: 0.8 },
@@ -63,72 +63,73 @@ warnBtn.addEventListener("click", () => {
 });
 
 // console.assert
-assertBtn.addEventListener("click", () => {
+assertBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.assert(2 === 3, "2 is not equal to 3"); // fix output so it looks like in video
+    console.assert(2 === 3, "2 is not equal to 3");
 });
 
 // console.clear
-clearBtn.addEventListener("click", () => {
+clearBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.clear();
 });
 
 // console.dir
-dirBtn.addEventListener("click", () => {
+dirBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.dir(exampleObj);
+    console.dir(obj);
 });
 
 // console.dirxml
-dirxmlBtn.addEventListener("click", () => {
+dirxmlBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.dirxml(dirxmlBtn);
 });
 
 // console.group and console.groupEnd
-groupStartBtn.addEventListener("click", () => {
+groupStartBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.group("Grouped Messages");
 });
 
-groupEndBtn.addEventListener("click", () => {
+groupEndBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.groupEnd();
 });
 
 // console.table
-tableBtn.addEventListener("click", () => {
+tableBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.table(exampleArray);
+    console.table(table);
 });
 
 // console.time and 
-startTimerBtn.addEventListener("click", () => {
+startTimerBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.time("Timer Button");
 });
 
 // console.timeEnd
-endTimerBtn.addEventListener("click", () => {
+endTimerBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.timeEnd("Timer Button");
 });
 
 // console.trace
-traceBtn.addEventListener("click", () => {
-    e.preventDefault();
-    function a() {
-    function b() {
-        console.trace("Trace stack trace example");
-    }
-    b();
-    }
-    a();
+traceBtn.addEventListener("click", (e) => {
+    // directly from mdn docs.
+    function foo() {
+        function bar() {
+          console.trace();
+        }
+        bar();
+      }
+      
+      foo();
 });
 
 // globalError
-globalErrorBtn.addEventListener("click", () => {
+globalErrorBtn.addEventListener("click", (e) => {
     e.preventDefault();
     throw new Error("This is a triggered global error!");
   });
